@@ -1,16 +1,38 @@
-# React + Vite
+# Catálogo de Produtos - Josephina 🍽️
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+## Sobre o projeto
 
-Currently, two official plugins are available:
+Esse projeto foi desenvolvido durante as aulas de React. A proposta foi criar um catálogo de produtos para o restaurante Josephina, onde o usuário consegue visualizar os produtos, pesquisar pelo nome e consultar mais informações sobre cada um.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Durante o desenvolvimento, trabalhamos com componentes, estados, propriedades e também aprendemos a buscar informações de uma API REST utilizando o `fetch`.
 
-## React Compiler
+## Tecnologias utilizadas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- JavaScript
+- HTML
+- CSS
+- Vite
+- JSON Server
 
-## Expanding the Oxlint configuration
+## Imagens do projeto
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+### Tela inicial
+
+![Tela inicial do catálogo](imagens/Captura%20de%20tela%202026-10-30%20121759.png)
+
+
+### Detalhes de um produto
+
+![Detalhes do produto](imagens/Captura%20de%20tela%202026-10-30%20121824.png)
+
+## Funcionalidades
+
+Na aplicação, o usuário consegue:
+
+- Visualizar os produtos cadastrados.
+- Pesquisar produtos pelo nome.
+- Ver os detalhes de um produto selecionado.
+- Consultar informações como nome, preço, categoria e descrição.
+
+Também foram adicionadas mensagens para mostrar quando os dados estão carregando, quando acontece algum erro ou quando nenhum produto é encontrado.
