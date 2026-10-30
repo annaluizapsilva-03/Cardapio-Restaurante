@@ -47,6 +47,7 @@ O projeto foi dividido em componentes para deixar o código mais organizado:
 - **ProductDetails:** apresenta os detalhes do produto selecionado.
 - **productsApi:** contém as funções utilizadas para fazer as requisições à API.
 
+
 ## Como funciona a API?
 
 Para buscar os produtos, utilizamos o `fetch`, que permite fazer requisições HTTP.
@@ -58,13 +59,17 @@ Foram utilizados dois endpoints:
 
 Os dados são recebidos em formato JSON e utilizados pelo React para atualizar as informações na tela.
 
-## Como os dados chegam até a tela?
+## Fluxo de dados entre os componentes
 
-Primeiro, quando a aplicação é aberta, o `useEffect` chama a função responsável por buscar os produtos na API. Depois, os dados recebidos são armazenados no `useState`.
-
-A lista é enviada para o componente `ProductList`, que utiliza o `ProductCard` para apresentar cada produto.
-
-Quando o usuário pesquisa, a lista é filtrada pelo nome. Quando clica em ver detalhes, o sistema utiliza o ID do produto para fazer outra requisição à API. O resultado aparece no componente `ProductDetails`.
+1. O App é o componente principal e controla os estados da aplicação.
+2. Quando a página é aberta, o App utiliza o `useEffect` para buscar os produtos na API.
+3. A função `getProducts` realiza a requisição utilizando o `fetch`.
+4. O ProductSearch permite que o usuário digite o nome de um produto para pesquisar.
+5. O App utiliza o texto digitado para filtrar a lista de produtos.
+6. O ProductList recebe os produtos filtrados e utiliza o ProductCard para apresentar cada um deles.
+7. Quando o usuário clica em ver detalhes, o ID do produto é enviado ao App.
+8. O App busca as informações desse produto na API e envia os dados para o ProductDetails.
+9. O ProductDetails apresenta as informações completas do produto selecionado.
 
 ## Como executar o projeto?
 
