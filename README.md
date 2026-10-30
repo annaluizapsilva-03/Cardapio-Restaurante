@@ -36,3 +36,46 @@ Na aplicação, o usuário consegue:
 - Consultar informações como nome, preço, categoria e descrição.
 
 Também foram adicionadas mensagens para mostrar quando os dados estão carregando, quando acontece algum erro ou quando nenhum produto é encontrado.
+## Organização do projeto
+
+O projeto foi dividido em componentes para deixar o código mais organizado:
+
+- **Header:** mostra o cabeçalho da aplicação.
+- **ProductSearch:** permite pesquisar os produtos.
+- **ProductList:** organiza e apresenta a lista de produtos.
+- **ProductCard:** mostra as informações de cada produto.
+- **ProductDetails:** apresenta os detalhes do produto selecionado.
+- **productsApi:** contém as funções utilizadas para fazer as requisições à API.
+
+## Como funciona a API?
+
+Para buscar os produtos, utilizamos o `fetch`, que permite fazer requisições HTTP.
+
+Foram utilizados dois endpoints:
+
+- `GET /produtos`: busca todos os produtos cadastrados.
+- `GET /produtos/:id`: busca um produto específico pelo seu ID.
+
+Os dados são recebidos em formato JSON e utilizados pelo React para atualizar as informações na tela.
+
+## Como os dados chegam até a tela?
+
+Primeiro, quando a aplicação é aberta, o `useEffect` chama a função responsável por buscar os produtos na API. Depois, os dados recebidos são armazenados no `useState`.
+
+A lista é enviada para o componente `ProductList`, que utiliza o `ProductCard` para apresentar cada produto.
+
+Quando o usuário pesquisa, a lista é filtrada pelo nome. Quando clica em ver detalhes, o sistema utiliza o ID do produto para fazer outra requisição à API. O resultado aparece no componente `ProductDetails`.
+
+## Como executar o projeto?
+
+**1.** Instale as dependências:
+
+npm install
+
+**2.** Inicie a API em um terminal:
+
+npm run server
+
+**3** Em outro terminal, inicie o React:
+
+npm run dev
